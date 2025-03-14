@@ -51,12 +51,10 @@ const developerAbstractions = {
 
 export const DeveloperAbstraction = () => {
   return (
-    <section className="container mx-auto rounded-3xl bg-stone-900 px-14 py-32">
-      <div className="space-y-20">
-        <Header />
-        <Feature />
-      </div>
-    </section>
+    <div className="space-y-20">
+      <Header />
+      <Feature />
+    </div>
   )
 }
 

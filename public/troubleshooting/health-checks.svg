@@ -1,0 +1,62 @@
+<svg width="29" height="30" viewBox="0 0 29 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_7174_3411)">
+<g clip-path="url(#clip1_7174_3411)">
+<path d="M11 13.4999L11 17.0997C11 17.4864 10.6866 17.7998 10.2999 17.7998L6.70009 17.7998C6.31345 17.7998 6.00002 17.4864 6.00002 17.0997L6.00002 13.4999C6.00002 13.1133 6.31345 12.7998 6.70009 12.7998L10.2999 12.7998C10.6866 12.7998 11 13.1133 11 13.4999Z" fill="#A2CEAD"/>
+</g>
+</g>
+<g clip-path="url(#clip2_7174_3411)">
+<g clip-path="url(#clip3_7174_3411)">
+<path d="M5 1.4999L5 5.09973C5 5.48637 4.68657 5.7998 4.29993 5.7998L0.700091 5.7998C0.313452 5.7998 2.00683e-05 5.48637 2.0119e-05 5.09973L2.0591e-05 1.49989C2.06417e-05 1.11326 0.313453 0.799824 0.700092 0.799824L4.29993 0.799825C4.68657 0.799825 5 1.11326 5 1.4999Z" fill="#A2CEAD"/>
+</g>
+</g>
+<g clip-path="url(#clip4_7174_3411)">
+<g clip-path="url(#clip5_7174_3411)">
+<path d="M17 7.49988L17 11.0997C17 11.4864 16.6866 11.7998 16.2999 11.7998L12.7001 11.7998C12.3134 11.7998 12 11.4864 12 11.0997L12 7.49987C12 7.11324 12.3134 6.7998 12.7001 6.7998L16.2999 6.7998C16.6866 6.7998 17 7.11324 17 7.49988Z" fill="#A2CEAD"/>
+</g>
+</g>
+<g clip-path="url(#clip6_7174_3411)">
+<g clip-path="url(#clip7_7174_3411)">
+<path d="M4.29991 29.7998L0.700071 29.7998C0.313432 29.7998 5.48024e-08 29.4864 1.22405e-07 29.0997L7.51822e-07 25.4999C8.19424e-07 25.1133 0.313433 24.7998 0.700072 24.7998L4.29991 24.7998C4.68655 24.7998 4.99998 25.1133 4.99998 25.4999L4.99998 29.0997C4.99998 29.4864 4.68655 29.7998 4.29991 29.7998Z" fill="#A2CEAD"/>
+</g>
+</g>
+<rect x="24" y="29.7998" width="5" height="5" rx="1" transform="rotate(-90 24 29.7998)" fill="#A2CEAD"/>
+<rect x="18" y="17.7998" width="5" height="5" rx="1" transform="rotate(-90 18 17.7998)" fill="#A2CEAD"/>
+<rect x="24" y="5.7998" width="5" height="5" rx="1" transform="rotate(-90 24 5.7998)" fill="#A2CEAD"/>
+<g clip-path="url(#clip8_7174_3411)">
+<g clip-path="url(#clip9_7174_3411)">
+<path d="M16.2999 23.7998L12.7001 23.7998C12.3134 23.7998 12 23.4864 12 23.0997L12 19.4999C12 19.1133 12.3134 18.7998 12.7001 18.7998L16.2999 18.7998C16.6865 18.7998 17 19.1133 17 19.4999L17 23.0997C17 23.4864 16.6865 23.7998 16.2999 23.7998Z" fill="#A2CEAD"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(6 12.7998)"/>
+</clipPath>
+<clipPath id="clip1_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(6 12.7998)"/>
+</clipPath>
+<clipPath id="clip2_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(0 0.799805)"/>
+</clipPath>
+<clipPath id="clip3_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(0 0.799805)"/>
+</clipPath>
+<clipPath id="clip4_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(12 6.7998)"/>
+</clipPath>
+<clipPath id="clip5_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(12 6.7998)"/>
+</clipPath>
+<clipPath id="clip6_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(0 24.7998)"/>
+</clipPath>
+<clipPath id="clip7_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(0 24.7998)"/>
+</clipPath>
+<clipPath id="clip8_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(12 18.7998)"/>
+</clipPath>
+<clipPath id="clip9_7174_3411">
+<rect width="5" height="5" fill="white" transform="translate(12 18.7998)"/>
+</clipPath>
+</defs>
+</svg>
