@@ -28,9 +28,9 @@ export const Navbar = () => {
   return (
     <header
       ref={navbarRef}
-      className="bg-background glassmorphism sticky top-0 z-50 mx-auto h-full w-fit pt-4 transition-transform ease-in-out"
+      className="fixed top-0 z-50 pt-4 transition-transform ease-in-out -translate-x-1/2 left-1/2"
     >
-      <div className="container mx-auto flex items-center gap-10 rounded-2xl border border-gray-200 px-4 py-3">
+      <div className="glassmorphism bg-background container mx-auto flex w-fit items-center gap-10 rounded-2xl border border-gray-200 px-4 py-3">
         <Logo />
         <nav>
           <ul className="flex items-center gap-6 text-sm">

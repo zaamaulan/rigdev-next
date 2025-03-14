@@ -8,14 +8,16 @@ import React from 'react'
 
 const Page = () => {
   return (
-    <div>
+    <>
       <Hero />
-      <ValueProposition />
-      <DeveloperAbstraction />
-      <DeploymentEngine />
-      <Troubleshooting />
-      <Conversion />
-    </div>
+      <div className='py-[150px] flex flex-col gap-[150px]'>
+        <ValueProposition />
+        <DeveloperAbstraction />
+        <DeploymentEngine />
+        <Troubleshooting />
+        <Conversion />
+      </div>
+    </>
   )
 }
 

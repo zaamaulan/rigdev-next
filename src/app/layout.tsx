@@ -24,7 +24,7 @@ export default function RootLayout({
         className={`${inter.className} flex min-h-svh flex-col justify-between antialiased`}
       >
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 bg-neutral-100">{children}</main>
         <Footer />
       </body>
     </html>
