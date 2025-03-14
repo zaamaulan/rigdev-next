@@ -33,12 +33,7 @@ export const ValueProposition = () => {
   return (
     <section className="container mx-auto space-y-14">
       <div className="flex flex-col items-center space-y-2">
-        <Badge
-          variant={'secondary'}
-          className="rounded-full bg-white px-4 py-2.5"
-        >
-          Fixing K8 complexity
-        </Badge>
+        <Badge variant={'secondary'} className='px-4 py-2'>Fixing K8 complexity</Badge>
         <h2 className="max-w-3xl text-center text-[42px]">
           Don’t let the complexity of Kubernetes leak into your engineering team
         </h2>
@@ -53,11 +48,16 @@ export const ValueProposition = () => {
 }
 
 const FeatureCard = ({ feature }: { feature: Feature }) => (
-  <Card className="border-gray-200 p-6 shadow-none gap-8">
+  <Card className="gap-8 border-gray-200 p-6 shadow-none">
     <div className="relative aspect-video">
-      <Image src={feature.image} alt={feature.title} fill className='object-cover bg-center rounded-lg'/>
+      <Image
+        src={feature.image}
+        alt={feature.title}
+        fill
+        className="rounded-lg bg-center object-cover"
+      />
     </div>
-    <div className='flex flex-col gap-6'>
+    <div className="flex flex-col gap-6">
       <CardHeader className="p-0">
         <CardTitle>{feature.title}</CardTitle>
         <CardDescription></CardDescription>

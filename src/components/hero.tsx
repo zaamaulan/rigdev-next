@@ -1,12 +1,12 @@
 import Image from 'next/image'
 import { ArrowLongRightIcon, GithubIcon } from './icon'
 import { Button } from './ui/button'
-import { compitableWith } from '@/data/compitable'
+import { compatibleWith } from '@/data/compatible'
 
 export const Hero = () => {
   return (
-    <section className='py-32 bg-white'>
-      <div className="container mx-auto grid grid-cols-2 gap-20 ">
+    <section className="bg-white py-32">
+      <div className="container mx-auto grid grid-cols-2 gap-20">
         <div className="space-y-32 self-center">
           <div className="space-y-7">
             <h1 className="text-[44px]">
@@ -19,7 +19,7 @@ export const Hero = () => {
             </p>
             <HeroCta />
           </div>
-          <HeroCompitableWith />
+          <HeroCompatibleWith />
         </div>
         <div className="relative aspect-square size-full">
           <Image src={'/hero.png'} alt="hero" fill className="object-contain" />
@@ -42,11 +42,11 @@ const HeroCta = () => (
   </div>
 )
 
-const HeroCompitableWith = () => (
+const HeroCompatibleWith = () => (
   <div className="space-y-3">
     <p className="text-sm text-zinc-600">Compatible with</p>
     <div className="flex items-center gap-2">
-      {compitableWith.map((item) => (
+      {compatibleWith.map((item) => (
         <div
           key={item.alt}
           className="[&>svg]:size-text-red-400 rounded-full border border-gray-200 px-4 py-2"

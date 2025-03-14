@@ -1,6 +1,6 @@
 import { Aws, Azure, DigitalOcean, GoogleCloud } from '@/components/icon'
 
-export const compitableWith = [
+export const compatibleWith = [
   {
     logo: GoogleCloud,
     alt: 'google cloud',
