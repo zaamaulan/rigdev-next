@@ -89,7 +89,7 @@ export const TeamBenefit = () => {
         defaultValue="product-teams"
         className="flex w-full flex-col items-center gap-10"
       >
-        <TabsList className="h-[50px] rounded-xl bg-neutral-200 py-1 shadow-none">
+        {/* <TabsList className="h-[50px] rounded-xl bg-neutral-200 py-1 shadow-none">
           {benefits.map((benefit) => (
             <TabsTrigger
               key={benefit.tab.value}
@@ -99,7 +99,7 @@ export const TeamBenefit = () => {
               {benefit.tab.label}
             </TabsTrigger>
           ))}
-        </TabsList>
+        </TabsList> */}
 
         {benefits.map((benefit) => (
           <TabsContent
