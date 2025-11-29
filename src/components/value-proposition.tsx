@@ -1,12 +1,15 @@
+'use client'
+
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Badge } from './ui/badge'
+import { motion, stagger } from 'motion/react'
 import Image from 'next/image'
+import { Badge } from './ui/badge'
+import { WordRevealText } from './word-reveal-text'
 
 const features: Feature[] = [
   {
@@ -33,22 +36,45 @@ export const ValueProposition = () => {
   return (
     <section className="container mx-auto space-y-14 max-lg:px-4">
       <div className="flex flex-col items-center space-y-2">
-        <Badge variant={'secondary'} className='px-4 py-2'>Fixing K8 complexity</Badge>
-        <h2 className="max-w-3xl text-center text-4xl lg:text-[44px]">
+        <Badge variant={'secondary'} className="px-4 py-2">
+          Fixing K8 complexity
+        </Badge>
+        <WordRevealText
+          as={'h2'}
+          className="max-w-3xl text-center text-4xl lg:text-[44px]"
+        >
           Don’t let the complexity of Kubernetes leak into your engineering team
-        </h2>
+        </WordRevealText>
       </div>
-      <div className="grid lg:grid-cols-3 gap-4 lg:gap-6">
+      <motion.div
+        className="grid gap-4 lg:grid-cols-3 lg:gap-6"
+        variants={{ initial: {}, animate: {} }}
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true }}
+        transition={{
+          delayChildren: stagger(0.3),
+        }}
+      >
         {features.map((feature) => (
-          <FeatureCard key={feature.title} feature={feature} />
+          <motion.div
+            key={feature.title}
+            variants={{
+              initial: { y: 20, opacity: 0 },
+              animate: { y: 0, opacity: 1 },
+            }}
+            transition={{ duration: 0.5 }}
+          >
+            <FeatureCard feature={feature} />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }
 
 const FeatureCard = ({ feature }: { feature: Feature }) => (
-  <Card className="gap-4 lg:gap-8 border-gray-200 p-6 shadow-none">
+  <Card className="gap-4 border-gray-200 p-6 shadow-none lg:gap-8">
     <div className="relative aspect-video">
       <Image
         src={feature.image}
@@ -60,11 +86,10 @@ const FeatureCard = ({ feature }: { feature: Feature }) => (
     <div className="flex flex-col gap-6">
       <CardHeader className="p-0">
         <CardTitle>{feature.title}</CardTitle>
-        <CardDescription className='text-zinc-600'>{feature.content}</CardDescription>
+        <CardDescription className="text-zinc-600">
+          {feature.content}
+        </CardDescription>
       </CardHeader>
-      {/* <CardContent className="p-0 ">
-        <p></p>
-      </CardContent> */}
     </div>
   </Card>
 )

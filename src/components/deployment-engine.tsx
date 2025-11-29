@@ -1,8 +1,12 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { ArrowLongRightIcon, LogoIcon } from './icon'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
+import { WordRevealText } from './word-reveal-text'
+import { motion, stagger } from 'motion/react'
 
 const deploymentEngine = {
   name: 'Flexible and scalable Deployment Engine',
@@ -55,32 +59,56 @@ const Header = () => (
         <deploymentEngine.badge.icon className="!size-3.5 text-white" />
         <span className="text-zinc-300">{deploymentEngine.badge.text}</span>
       </Badge>
-      <h2 className="text-3xl lg:text-[44px] text-white">{deploymentEngine.name}</h2>
+      <WordRevealText className="text-3xl text-white lg:text-[44px]" as={'h2'}>
+        {deploymentEngine.name}
+      </WordRevealText>
     </div>
     <div className="space-y-6">
-      <p className="max-w-3xl lg:text-lg text-zinc-300">
+      <WordRevealText as={'p'} className="max-w-3xl text-zinc-300 lg:text-lg">
         {deploymentEngine.description}
-      </p>
-      <Button variant={'secondary'}>
-        <span>{deploymentEngine.button.text}</span>
-        <deploymentEngine.button.icon />
-      </Button>
+      </WordRevealText>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <Button variant={'secondary'}>
+          <span>{deploymentEngine.button.text}</span>
+          <deploymentEngine.button.icon />
+        </Button>
+      </motion.div>
     </div>
   </div>
 )
 
 const Feature = () => (
-  <div className="grid lg:grid-cols-3 gap-4 lg:gap-6">
+  <motion.div
+    className="grid gap-4 lg:grid-cols-3 lg:gap-6"
+    variants={{ initial: {}, animate: {} }}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    transition={{
+      delayChildren: stagger(0.3),
+    }}
+  >
     {deploymentEngine.features.map((feature) => (
-      <div
+      <motion.div
         key={feature.title}
         className={cn(
           'flex w-full flex-col gap-10 rounded-2xl border border-zinc-700 bg-neutral-800 p-6 lg:p-10',
         )}
+        variants={{
+          initial: { y: 20, opacity: 0 },
+          animate: { y: 0, opacity: 1 },
+        }}
+        transition={{ duration: 0.5 }}
       >
         <div className="space-y-1 lg:space-y-3">
-          <p className="text-lg lg:text-xl text-white">{feature.title}</p>
-          <p className="mx-auto max-w-md max-lg:text-sm text-neutral-400">{feature.content}</p>
+          <p className="text-lg text-white lg:text-xl">{feature.title}</p>
+          <p className="mx-auto max-w-md text-neutral-400 max-lg:text-sm">
+            {feature.content}
+          </p>
         </div>
         <div className="relative aspect-video h-auto lg:h-[200px]">
           <Image
@@ -90,7 +118,7 @@ const Feature = () => (
             className="object-contain"
           />
         </div>
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 )

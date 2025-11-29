@@ -1,8 +1,12 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { ArrowLongRightIcon, LogoIcon } from './icon'
 import { Badge } from './ui/badge'
 import { Button } from './ui/button'
+import { WordRevealText } from './word-reveal-text'
+import { motion, stagger } from 'motion/react'
 
 const developerAbstractions = {
   name: 'Developer-Friendly Kubernetes Abstractions',
@@ -67,28 +71,50 @@ const Header = () => (
           {developerAbstractions.badge.text}
         </span>
       </Badge>
-      <h2 className="text-3xl lg:text-[44px] text-white">{developerAbstractions.name}</h2>
+      <WordRevealText as={'h2'} className="text-3xl text-white lg:text-[44px]">
+        {developerAbstractions.name}
+      </WordRevealText>
     </div>
     <div className="space-y-6">
-      <p className="max-w-3xl lg:text-lg text-zinc-300">
+      <WordRevealText as={'p'} className="max-w-3xl text-zinc-300 lg:text-lg">
         {developerAbstractions.description}
-      </p>
-      <Button variant={'secondary'}>
-        <span>{developerAbstractions.button.text}</span>
-        <developerAbstractions.button.icon />
-      </Button>
+      </WordRevealText>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <Button variant={'secondary'}>
+          <span>{developerAbstractions.button.text}</span>
+          <developerAbstractions.button.icon />
+        </Button>
+      </motion.div>
     </div>
   </div>
 )
 
 const Feature = () => (
-  <div className="grid lg:grid-cols-2 gap-4 lg:gap-6">
+  <motion.div
+    className="grid gap-4 lg:grid-cols-2 lg:gap-6"
+    variants={{ initial: {}, animate: {} }}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    transition={{
+      delayChildren: stagger(0.3),
+    }}
+  >
     {developerAbstractions.features.map((feature) => (
-      <div
+      <motion.div
         key={feature.title}
         className={cn(
           'flex w-full flex-col gap-10 rounded-2xl border border-zinc-700 bg-neutral-800 p-6 lg:p-10',
         )}
+        variants={{
+          initial: { y: 20, opacity: 0 },
+          animate: { y: 0, opacity: 1 },
+        }}
+        transition={{ duration: 0.5 }}
       >
         <div className="relative aspect-video h-auto lg:h-[200px]">
           <Image
@@ -98,11 +124,13 @@ const Feature = () => (
             className="object-contain"
           />
         </div>
-        <div className="space-y-1 lg:space-y-3 text-center">
-          <p className="text-lg lg:text-xl text-white">{feature.title}</p>
-          <p className="mx-auto max-w-md max-lg:text-sm text-neutral-400">{feature.content}</p>
+        <div className="space-y-1 text-center lg:space-y-3">
+          <p className="text-lg text-white lg:text-xl">{feature.title}</p>
+          <p className="mx-auto max-w-md text-neutral-400 max-lg:text-sm">
+            {feature.content}
+          </p>
         </div>
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 )

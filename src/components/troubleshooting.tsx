@@ -1,8 +1,12 @@
+'use client'
+
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import { ArrowLongRightIcon, LogoIcon } from './icon'
 import { Badge } from './ui/badge'
 import { Button, buttonVariants } from './ui/button'
+import { WordRevealText } from './word-reveal-text'
+import { motion, stagger } from 'motion/react'
 
 const troubleshooting = {
   name: 'Troubleshooting made simple',
@@ -62,30 +66,50 @@ const Header = () => (
         <troubleshooting.badge.icon className="!size-3.5 text-white" />
         <span className="text-zinc-300">{troubleshooting.badge.text}</span>
       </Badge>
-      <h2 className="text-3xl text-white lg:text-[44px]">
+      <WordRevealText as={'h2'} className="text-3xl text-white lg:text-[44px]">
         {troubleshooting.name}
-      </h2>
+      </WordRevealText>
     </div>
     <div className="space-y-6">
-      <p className="max-w-3xl text-zinc-300 lg:text-lg">
+      <WordRevealText as={'p'} className="max-w-3xl text-zinc-300 lg:text-lg">
         {troubleshooting.description}
-      </p>
-      <Button variant={'secondary'}>
-        <span>{troubleshooting.button.text}</span>
-        <troubleshooting.button.icon />
-      </Button>
+      </WordRevealText>
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+      >
+        <Button variant={'secondary'}>
+          <span>{troubleshooting.button.text}</span>
+          <troubleshooting.button.icon />
+        </Button>
+      </motion.div>
     </div>
   </div>
 )
 
 const Feature = () => (
-  <div className="grid gap-4 lg:grid-cols-4 lg:gap-6">
+  <motion.div
+    className="grid gap-4 lg:grid-cols-4 lg:gap-6"
+    variants={{ initial: {}, animate: {} }}
+    initial="initial"
+    whileInView="animate"
+    viewport={{ once: true }}
+    transition={{
+      delayChildren: stagger(0.3),
+    }}
+  >
     {troubleshooting.features.map((feature) => (
-      <div
+      <motion.div
         key={feature.title}
         className={cn(
           'flex w-full flex-col gap-5 rounded-2xl border border-zinc-700 bg-neutral-800 p-6 lg:p-10',
         )}
+        variants={{
+          initial: { y: 20, opacity: 0 },
+          animate: { y: 0, opacity: 1 },
+        }}
+        transition={{ duration: 0.5 }}
       >
         <div
           className={cn(
@@ -107,7 +131,7 @@ const Feature = () => (
             {feature.content}
           </p>
         </div>
-      </div>
+      </motion.div>
     ))}
-  </div>
+  </motion.div>
 )

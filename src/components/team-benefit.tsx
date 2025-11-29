@@ -5,6 +5,7 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+import { WordRevealText } from './word-reveal-text'
 
 const benefits = [
   {
@@ -81,30 +82,30 @@ const benefits = [
 export const TeamBenefit = () => {
   return (
     <section className="container mx-auto flex flex-col items-center gap-10 max-lg:px-4">
-      <h2 className="text-center text-4xl lg:text-[44px]">
+      <WordRevealText as={'h2'} className="text-center text-4xl lg:text-[44px]">
         A platform to benefit the entire team
-      </h2>
+      </WordRevealText>
       <Tabs
         defaultValue="product-teams"
         className="flex w-full flex-col items-center gap-10"
       >
-        {/* <TabsList className="h-[50px] overflow-x-auto rounded-xl bg-neutral-200 py-1">
+        <TabsList className="h-[50px] rounded-xl bg-neutral-200 py-1 shadow-none">
           {benefits.map((benefit) => (
             <TabsTrigger
               key={benefit.tab.value}
               value={benefit.tab.value}
-              className="h-[44px] rounded-lg px-[18px] text-lg"
+              className="h-[44px] rounded-lg px-[18px] text-lg data-[state=active]:shadow-none"
             >
               {benefit.tab.label}
             </TabsTrigger>
           ))}
-        </TabsList> */}
+        </TabsList>
 
         {benefits.map((benefit) => (
           <TabsContent
             key={benefit.tab.value}
             value={benefit.tab.value}
-            className="grid w-full lg:grid-cols-3 gap-4 lg:gap-6"
+            className="grid w-full gap-4 lg:grid-cols-3 lg:gap-6"
           >
             {benefit.content.map((content) => (
               <BenefitCard
@@ -130,7 +131,7 @@ const BenefitCard = ({
   <Card>
     <CardHeader className="lg:space-y-5">
       <CardTitle className="text-lg">{title}</CardTitle>
-      <CardDescription className="lg:text-base text-zinc-600">
+      <CardDescription className="text-zinc-600 lg:text-base">
         {description}
       </CardDescription>
     </CardHeader>
