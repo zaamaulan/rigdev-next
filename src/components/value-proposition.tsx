@@ -31,14 +31,14 @@ const features: Feature[] = [
 
 export const ValueProposition = () => {
   return (
-    <section className="container mx-auto space-y-14">
+    <section className="container mx-auto space-y-14 max-lg:px-4">
       <div className="flex flex-col items-center space-y-2">
         <Badge variant={'secondary'} className='px-4 py-2'>Fixing K8 complexity</Badge>
-        <h2 className="max-w-3xl text-center text-[42px]">
+        <h2 className="max-w-3xl text-center text-4xl lg:text-[44px]">
           Don’t let the complexity of Kubernetes leak into your engineering team
         </h2>
       </div>
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid lg:grid-cols-3 gap-4 lg:gap-6">
         {features.map((feature) => (
           <FeatureCard key={feature.title} feature={feature} />
         ))}
@@ -48,7 +48,7 @@ export const ValueProposition = () => {
 }
 
 const FeatureCard = ({ feature }: { feature: Feature }) => (
-  <Card className="gap-8 border-gray-200 p-6 shadow-none">
+  <Card className="gap-4 lg:gap-8 border-gray-200 p-6 shadow-none">
     <div className="relative aspect-video">
       <Image
         src={feature.image}
@@ -60,11 +60,11 @@ const FeatureCard = ({ feature }: { feature: Feature }) => (
     <div className="flex flex-col gap-6">
       <CardHeader className="p-0">
         <CardTitle>{feature.title}</CardTitle>
-        <CardDescription></CardDescription>
+        <CardDescription className='text-zinc-600'>{feature.content}</CardDescription>
       </CardHeader>
-      <CardContent className="p-0 text-zinc-600">
-        <p>{feature.content}</p>
-      </CardContent>
+      {/* <CardContent className="p-0 ">
+        <p></p>
+      </CardContent> */}
     </div>
   </Card>
 )

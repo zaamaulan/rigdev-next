@@ -48,7 +48,7 @@ const troubleshooting = {
 
 export const Troubleshooting = () => {
   return (
-    <div className="space-y-20">
+    <div className="space-y-10 lg:space-y-20">
       <Header />
       <Feature />
     </div>
@@ -56,16 +56,18 @@ export const Troubleshooting = () => {
 }
 
 const Header = () => (
-  <div className="space-y-7">
+  <div className="space-y-4 lg:space-y-7">
     <div className="space-y-3">
       <Badge>
         <troubleshooting.badge.icon className="!size-3.5 text-white" />
         <span className="text-zinc-300">{troubleshooting.badge.text}</span>
       </Badge>
-      <h2 className="text-[44px] text-white">{troubleshooting.name}</h2>
+      <h2 className="text-3xl text-white lg:text-[44px]">
+        {troubleshooting.name}
+      </h2>
     </div>
     <div className="space-y-6">
-      <p className="max-w-3xl text-lg text-zinc-300">
+      <p className="max-w-3xl text-zinc-300 lg:text-lg">
         {troubleshooting.description}
       </p>
       <Button variant={'secondary'}>
@@ -77,12 +79,12 @@ const Header = () => (
 )
 
 const Feature = () => (
-  <div className="grid grid-cols-4 gap-6">
+  <div className="grid gap-4 lg:grid-cols-4 lg:gap-6">
     {troubleshooting.features.map((feature) => (
       <div
         key={feature.title}
         className={cn(
-          'flex w-full flex-col gap-5 rounded-2xl border border-zinc-700 bg-neutral-800 p-10',
+          'flex w-full flex-col gap-5 rounded-2xl border border-zinc-700 bg-neutral-800 p-6 lg:p-10',
         )}
       >
         <div
@@ -99,9 +101,11 @@ const Feature = () => (
             className="object-contain"
           />
         </div>
-        <div className="space-y-3">
-          <p className="text-xl text-white">{feature.title}</p>
-          <p className="mx-auto max-w-md text-neutral-400">{feature.content}</p>
+        <div className="space-y-1 lg:space-y-3">
+          <p className="text-lg text-white lg:text-xl">{feature.title}</p>
+          <p className="mx-auto max-w-md text-neutral-400 max-lg:text-sm">
+            {feature.content}
+          </p>
         </div>
       </div>
     ))}

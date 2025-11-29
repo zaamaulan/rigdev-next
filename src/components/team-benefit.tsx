@@ -80,15 +80,15 @@ const benefits = [
 
 export const TeamBenefit = () => {
   return (
-    <section className="container mx-auto flex flex-col items-center gap-10">
-      <h2 className="text-center text-[42px]">
+    <section className="container mx-auto flex flex-col items-center gap-10 max-lg:px-4">
+      <h2 className="text-center text-4xl lg:text-[44px]">
         A platform to benefit the entire team
       </h2>
       <Tabs
         defaultValue="product-teams"
         className="flex w-full flex-col items-center gap-10"
       >
-        <TabsList className="h-[50px] rounded-xl bg-neutral-200 py-1">
+        {/* <TabsList className="h-[50px] overflow-x-auto rounded-xl bg-neutral-200 py-1">
           {benefits.map((benefit) => (
             <TabsTrigger
               key={benefit.tab.value}
@@ -98,13 +98,13 @@ export const TeamBenefit = () => {
               {benefit.tab.label}
             </TabsTrigger>
           ))}
-        </TabsList>
+        </TabsList> */}
 
         {benefits.map((benefit) => (
           <TabsContent
             key={benefit.tab.value}
             value={benefit.tab.value}
-            className="grid w-full grid-cols-3 gap-6"
+            className="grid w-full lg:grid-cols-3 gap-4 lg:gap-6"
           >
             {benefit.content.map((content) => (
               <BenefitCard
@@ -128,9 +128,9 @@ const BenefitCard = ({
   description: string
 }) => (
   <Card>
-    <CardHeader className="space-y-5">
+    <CardHeader className="lg:space-y-5">
       <CardTitle className="text-lg">{title}</CardTitle>
-      <CardDescription className="text-base text-zinc-600">
+      <CardDescription className="lg:text-base text-zinc-600">
         {description}
       </CardDescription>
     </CardHeader>

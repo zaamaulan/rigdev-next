@@ -11,9 +11,9 @@ const Page = () => {
   return (
     <>
       <Hero />
-      <div className="flex flex-col gap-[150px] py-[150px]">
+      <div className="flex flex-col gap-20 lg:gap-[150px] py-20 lg:py-[150px]">
         <ValueProposition />
-        <section className="container mx-auto space-y-24 rounded-3xl bg-stone-900 px-14 py-32">
+        <section className="container mx-auto space-y-16 lg:space-y-24 rounded-3xl bg-stone-900 px-7 py-10 max-lg:px-4 lg:px-14 lg:py-32">
           <DeveloperAbstraction />
           <DeploymentEngine />
           <Troubleshooting />

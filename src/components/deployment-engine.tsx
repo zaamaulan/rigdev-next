@@ -41,7 +41,7 @@ const deploymentEngine = {
 
 export const DeploymentEngine = () => {
   return (
-    <div className="space-y-20">
+    <div className="space-y-10 lg:space-y-20">
       <Header />
       <Feature />
     </div>
@@ -49,16 +49,16 @@ export const DeploymentEngine = () => {
 }
 
 const Header = () => (
-  <div className="space-y-7">
+  <div className="space-y-4 lg:space-y-7">
     <div className="space-y-3">
       <Badge>
         <deploymentEngine.badge.icon className="!size-3.5 text-white" />
         <span className="text-zinc-300">{deploymentEngine.badge.text}</span>
       </Badge>
-      <h2 className="text-[44px] text-white">{deploymentEngine.name}</h2>
+      <h2 className="text-3xl lg:text-[44px] text-white">{deploymentEngine.name}</h2>
     </div>
     <div className="space-y-6">
-      <p className="max-w-3xl text-lg text-zinc-300">
+      <p className="max-w-3xl lg:text-lg text-zinc-300">
         {deploymentEngine.description}
       </p>
       <Button variant={'secondary'}>
@@ -70,19 +70,19 @@ const Header = () => (
 )
 
 const Feature = () => (
-  <div className="grid grid-cols-3 gap-6">
+  <div className="grid lg:grid-cols-3 gap-4 lg:gap-6">
     {deploymentEngine.features.map((feature) => (
       <div
         key={feature.title}
         className={cn(
-          'flex w-full flex-col gap-10 rounded-2xl border border-zinc-700 bg-neutral-800 p-10',
+          'flex w-full flex-col gap-10 rounded-2xl border border-zinc-700 bg-neutral-800 p-6 lg:p-10',
         )}
       >
-        <div className="space-y-3">
-          <p className="text-xl text-white">{feature.title}</p>
-          <p className="mx-auto max-w-md text-neutral-400">{feature.content}</p>
+        <div className="space-y-1 lg:space-y-3">
+          <p className="text-lg lg:text-xl text-white">{feature.title}</p>
+          <p className="mx-auto max-w-md max-lg:text-sm text-neutral-400">{feature.content}</p>
         </div>
-        <div className="relative aspect-video h-[200px]">
+        <div className="relative aspect-video h-auto lg:h-[200px]">
           <Image
             src={feature.image}
             alt={feature.title}

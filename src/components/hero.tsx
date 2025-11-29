@@ -5,9 +5,9 @@ import { compatibleWith } from '@/data/compatible'
 
 export const Hero = () => {
   return (
-    <section className="bg-white py-32">
-      <div className="container mx-auto grid grid-cols-2 gap-20">
-        <div className="space-y-32 self-center">
+    <section className="bg-white py-32 max-lg:px-4">
+      <div className="container mx-auto grid lg:grid-cols-2 gap-20">
+        <div className="space-y-14 lg:space-y-32 self-center">
           <div className="space-y-7">
             <h1 className="text-[44px]">
               The application platform for Kubernetes
@@ -21,7 +21,7 @@ export const Hero = () => {
           </div>
           <HeroCompatibleWith />
         </div>
-        <div className="relative aspect-square size-full">
+        <div className="relative aspect-square size-full max-lg:hidden">
           <Image src={'/hero.png'} alt="hero" fill className="object-contain" />
         </div>
       </div>
@@ -45,7 +45,7 @@ const HeroCta = () => (
 const HeroCompatibleWith = () => (
   <div className="space-y-3">
     <p className="text-sm text-zinc-600">Compatible with</p>
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       {compatibleWith.map((item) => (
         <div
           key={item.alt}
